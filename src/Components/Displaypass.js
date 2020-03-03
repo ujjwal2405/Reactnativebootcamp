@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput,TouchableOpacity} from 'react-native';
 
 class Displaypass extends React.Component{
     constructor(props){
@@ -10,6 +10,7 @@ class Displaypass extends React.Component{
    
   }
  render(){
+   const {navigation}=this.props;
      return(
          <View style={styles.container}>
             <Text>Username</Text>
@@ -24,9 +25,9 @@ class Displaypass extends React.Component{
               onChangeText={text=>this.setState({text})}
             />
             <Text>{this.state.text}</Text>
-            
-            <Text>Password</Text>
-            
+            <TouchableOpacity onPress={()=>navigation.navigate('Tatasky')}>
+            <Text>Login</Text>
+            </TouchableOpacity>
             <TextInput 
             style={{
                 height: 50,

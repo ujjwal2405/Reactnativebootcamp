@@ -68,7 +68,7 @@ class Safeareea extends React.Component {
           <TouchableOpacity onPress={() => this.check('1')}>
             <Image
               style={styles.img}
-              source={require('./Resources/src/Component/Assests/guitar.jpeg')}></Image>
+              source={require('../Assests/guitar.jpeg')}></Image>
           </TouchableOpacity>
 
           <TouchableOpacity style={{flex: 1}} onPress={() => this.check('2')}>
@@ -78,7 +78,7 @@ class Safeareea extends React.Component {
           <TouchableOpacity onPress={() => this.check('3')}>
             <Image
               style={styles.img}
-              source={require('./Resources/guitar.jpeg')}></Image>
+              source={require('../Assests/guitar.jpeg')}></Image>
           </TouchableOpacity>
         </View>
 
@@ -112,7 +112,7 @@ class Safeareea extends React.Component {
           <TouchableOpacity onPress={() => this.check('7')}>
             <Image
               style={styles.img}
-              source={require('./Resources/guitar.jpeg')}></Image>
+              source={require('../Assests/guitar.jpeg')}></Image>
           </TouchableOpacity>
 
           <TouchableOpacity style={{flex: 1}} onPress={() => this.check('8')}>
@@ -122,7 +122,7 @@ class Safeareea extends React.Component {
           <TouchableOpacity onPress={() => this.check('9')}>
             <Image
               style={styles.img}
-              source={require('./Resources/src/Component/Assests/guitar.jpeg')}></Image>
+              source={require('../Assests/guitar.jpeg')}></Image>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
