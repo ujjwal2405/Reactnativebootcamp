@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput,TouchableOpacity} from 'react-native';
 
 class Tatasky extends React.Component{
     constructor(props){
@@ -9,6 +9,7 @@ class Tatasky extends React.Component{
 
 
     render(){
+        const {navigation}=this.props;
         return(
             <View style={{backgroundColor:"grey",flex:1}}>
                 <View style={styles.recharge}>
@@ -29,12 +30,15 @@ class Tatasky extends React.Component{
             </View>
             
             <View style={styles.greyBlock}>
-            
+            <TouchableOpacity onPress={()=>navigation.navigate('Safearea')}>
             <View style={styles.proceedPayment}>
+            
                 <Text style={{fontSize:13,color:"#ffffff"}}>
                     Proceed to Payment
                 </Text>
+            
             </View>
+            </TouchableOpacity>
             </View>
             
             
