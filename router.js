@@ -15,7 +15,20 @@ const MyStack = () => {
       <Stack.Screen name="Login" component={Login} />
       
       <Stack.Screen name="Tatasky" component={Tatasky}
-      options={{
+      options={{headerStyle: {
+        backgroundColor: '#f4511e',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+      headerRight: () => (
+        <Button
+          onPress={() => alert('This is a button!')}
+          title="Info"
+          color="#fff"
+        />
+      )
         
     }}
       

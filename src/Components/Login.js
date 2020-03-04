@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, TextInput,TouchableOpacity, Button} from 'react-native';
 
-class Displaypass extends React.Component{
+class Login extends React.Component{
     constructor(props){
         super(props);
         this.state={text:'',passtext:'',changed:0};
@@ -65,4 +65,4 @@ const styles = StyleSheet.create({
     },
   });
 
-export default Displaypass
+export default Login
