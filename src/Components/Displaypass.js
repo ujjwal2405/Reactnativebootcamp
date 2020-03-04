@@ -1,16 +1,26 @@
 import React from 'react';
-import {View, Text, StyleSheet, TextInput,TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TextInput,TouchableOpacity, Button} from 'react-native';
 
 class Displaypass extends React.Component{
     constructor(props){
         super(props);
-        this.state={text:'',passtext:''};
-    }
+        this.state={text:'',passtext:'',changed:0};
+
+      }
   onChangeText(text){
    
   }
- render(){
-   const {navigation}=this.props;
+
+  onPiress=()=>{
+    this.setState({
+      changed:this.state.changed+1
+    })
+ 
+  }
+ 
+  render(){
+   const {navigation,route}=this.props;
+
      return(
          <View style={styles.container}>
             <Text>Username</Text>
@@ -25,7 +35,7 @@ class Displaypass extends React.Component{
               onChangeText={text=>this.setState({text})}
             />
             <Text>{this.state.text}</Text>
-            <TouchableOpacity onPress={()=>navigation.navigate('Tatasky')}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Tatasky',{data:this.onPiress()})}>
             <Text>Login</Text>
             </TouchableOpacity>
             <TextInput 
@@ -39,7 +49,8 @@ class Displaypass extends React.Component{
             
             />
             <Text>{this.state.passtext}</Text>
-         
+            <Text>{this.state.changed}</Text>
+            <Button title="Press" onPress={this.onPiress}></Button>
          
          </View>
      )

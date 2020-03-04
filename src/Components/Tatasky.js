@@ -1,15 +1,22 @@
 import React from 'react';
-import {View, Text, StyleSheet, TextInput,TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, TextInput,TouchableOpacity, Button} from 'react-native';
+
 
 class Tatasky extends React.Component{
     constructor(props){
         super(props);
+        this.state={
+            newValue:props.route.params.data
+        } 
+        
     }
    
-
+   
 
     render(){
-        const {navigation}=this.props;
+        const {newValue}=this.state;
+        const {navigation,route}=this.props;
+    
         return(
             <View style={{backgroundColor:"grey",flex:1}}>
                 <View style={styles.recharge}>
@@ -21,7 +28,7 @@ class Tatasky extends React.Component{
                 Enter Amount
             </Text>
             <Text style={styles.recommendedRecharge}>
-                Recommended Recharge
+                {`${newValue} BHaalu`}
             </Text>
             <View style={{borderBottomWidth:3,borderBottomColor:"blue"}}>
             <Text style={{padding:8,fontSize:35}}> 
@@ -39,6 +46,7 @@ class Tatasky extends React.Component{
             
             </View>
             </TouchableOpacity>
+            <Button title="xyz" onPress={newValue}></Button>
             </View>
             
             

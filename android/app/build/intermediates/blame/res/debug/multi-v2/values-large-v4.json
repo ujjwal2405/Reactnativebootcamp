@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/ujjwalgupta/Desktop/ReactForm/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml",
+            "outputFile": "/Users/ujjwalgupta/Desktop/ReactNativeBootcamp/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "/Users/ujjwalgupta/.gradle/caches/transforms-2/files-2.1/8a64e881d5159f14f87dbacda3fa63dd/res/values-large-v4/values-large-v4.xml",
+                    "source": "/Users/ujjwalgupta/.gradle/caches/transforms-2/files-2.1/cfac32ae132eb9ffe12400c26c46b933/res/values-large-v4/values-large-v4.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,177",
+                        "endColumns": "121,133",
+                        "endOffsets": "172,306"
+                    },
+                    "to": {
+                        "startLines": "11,12",
+                        "startColumns": "4,4",
+                        "startOffsets": "752,874",
+                        "endColumns": "121,133",
+                        "endOffsets": "869,1003"
+                    }
+                },
+                {
+                    "source": "/Users/ujjwalgupta/.gradle/caches/transforms-2/files-2.1/afcb1d7502c51fe8c015f326e053dd0b/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
