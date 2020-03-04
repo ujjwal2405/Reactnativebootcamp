@@ -11,7 +11,7 @@ class Displaypass extends React.Component{
    
   }
 
-  onPiress=()=>{
+  onPressing=()=>{
     this.setState({
       changed:this.state.changed+1
     })
@@ -35,7 +35,7 @@ class Displaypass extends React.Component{
               onChangeText={text=>this.setState({text})}
             />
             <Text>{this.state.text}</Text>
-            <TouchableOpacity onPress={()=>navigation.navigate('Tatasky',{data:this.onPiress()})}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Tatasky',{data:this.onPressing()})}>
             <Text>Login</Text>
             </TouchableOpacity>
             <TextInput 
@@ -50,7 +50,7 @@ class Displaypass extends React.Component{
             />
             <Text>{this.state.passtext}</Text>
             <Text>{this.state.changed}</Text>
-            <Button title="Press" onPress={this.onPiress}></Button>
+            <Button title="Press" onPress={this.onPressing}></Button>
          
          </View>
      )

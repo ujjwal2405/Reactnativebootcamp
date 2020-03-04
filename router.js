@@ -1,6 +1,6 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-import Displaypass from './src/Components/Displaypass';
+import Login from './src/Components/Login';
 import Tatasky from './src/Components/Tatasky';
 import {Button} from 'react-native'
 
@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 const MyStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="MainMenu" component={Displaypass} />
+      <Stack.Screen name="Login" component={Login} />
       
       <Stack.Screen name="Tatasky" component={Tatasky}
       options={{
