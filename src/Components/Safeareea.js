@@ -56,6 +56,7 @@ class Safeareea extends React.Component {
   }
 
   render() {
+    const {navigation}=this.props;
     console.log('HI');
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: '#E0E0E0'}}>
@@ -119,7 +120,7 @@ class Safeareea extends React.Component {
             <Text style={styles.text}>text</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => this.check('9')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Listing')}>
             <Image
               style={styles.img}
               source={require('../Assests/guitar.jpeg')}></Image>
