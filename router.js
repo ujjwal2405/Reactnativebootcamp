@@ -7,7 +7,8 @@ import {Button} from 'react-native'
 
 import Safearea from './src/Components/Safeareea';
 import Listing from './src/Components/Listing';
-
+import Flatmodal from './src/Components/Flatmodal';
+import demoScreen from './src/Components/demoScreen'
 import * as React from 'react';
 const Stack = createStackNavigator();
 
@@ -37,6 +38,9 @@ const MyStack = () => {
       />
       <Stack.Screen name="Safearea" component={Safearea} />
       <Stack.Screen name="Listing" component={Listing} />
+      <Stack.Screen name="Flatmodal" component={Flatmodal} />
+      <Stack.Screen name="demoScreen" component={demoScreen} />
+      
       
     </Stack.Navigator>
   );

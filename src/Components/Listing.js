@@ -108,12 +108,21 @@ class Listing extends React.Component {
 
   render() {
     const { arrObj } = this.state;
+    const {navigation}=this.props;
     return (
       <SafeAreaView style={{ flex: 1 }}>
+           <TouchableOpacity onPress={() => navigation.navigate('Flatmodal')}>
+
+<View>
+  <Text style={{color:"red",textAlign:"center",margin:20}}>Press to Navigate</Text>
+</View>
+
+</TouchableOpacity>
         <FlatList
           data={arrObj}
           renderItem={({ item, index }) => {
             return (
+           
               <View style={styles.container}>
                 <Image
                   // resizeMode="contain"
@@ -147,7 +156,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     margin: 10,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+  
   },
   img: {
     height: 150,
