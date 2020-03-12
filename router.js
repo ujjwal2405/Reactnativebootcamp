@@ -16,7 +16,7 @@ const Stack = createStackNavigator();
 const MyStack = () => {
   return (
     <Stack.Navigator>
-      
+      <Stack.Screen name="demoScreen" component={demoScreen} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Tatasky" component={Tatasky}
       options={{headerStyle: {
@@ -40,7 +40,7 @@ const MyStack = () => {
       <Stack.Screen name="Safearea" component={Safearea} />
       <Stack.Screen name="Listing" component={Listing} />
       <Stack.Screen name="Flatmodal" component={Flatmodal} />
-      <Stack.Screen name="demoScreen" component={demoScreen} />
+      
       <Stack.Screen name="mapRender" component={mapRender}/>
       
     </Stack.Navigator>

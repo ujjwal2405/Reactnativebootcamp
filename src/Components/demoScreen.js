@@ -1,5 +1,6 @@
 import React from "react";
-
+import SectionListHeader from './SectionListHeader'
+import SectionListItem from './SectionListItem'
 import {
   View,
   Text,
@@ -11,24 +12,60 @@ import {
   SafeAreaView,
   SectionList
 } from "react-native";
-const DATA = [
-  {
-    title: "Main dishes",
-    data: ["Pizza", "Burger", "Risotto"]
-  },
-  {
-    title: "Sides",
-    data: ["French Fries", "Onion Rings", "Fried Shrimps"]
-  },
-  {
-    title: "Drinks",
-    data: ["Water", "Coke", "Beer"]
-  },
-  {
-    title: "Desserts",
-    data: ["Cheese Cake", "Ice Cream"]
-  }
-];
+
+arrObj=[{categoryId:1,name:"Fruits",quantity:2},
+        {categoryId:1,name:"Fruits",quantity:3},
+        {categoryId:2,name:"Mobile",quantity:39},
+        {categoryId:2,name:"Laptops",quantity:62},
+        {categoryId:3,name:"Toys",quantity:39},
+        {categoryId:3,name:"Chairs",quantity:62},
+        {categoryId:4,name:"Bottles",quantity:21},
+        {categoryId:4,name:"Tables",quantity:36}]
+
+
+let datas =[]
+arrObj.forEach((item)=>{
+if(!datas.includes(item.categoryId)){
+    datas.push(item.categoryId)
+}
+})
+
+var newList=[]
+datas.forEach((item) => {
+   var dataList ={};
+   dataList.title = item;
+   dataList.data = []
+   arrObj.filter((value) => {
+
+    if(value.categoryId === item){
+       dataList.data.push(value);
+     }
+   })
+   newList.push(dataList)
+})
+
+console.log(newList)
+
+
+
+// const DATA = [
+//   {
+//     title: 1,
+//     data: [{categName:"Fruits",quantity:2},{categName:"Fruits",quantity:3}]
+//   },
+//   {
+//     title: 2,
+//     data: [{categName:"Mobile",quantity:6},{categName:"Laptops",quantity:7}]
+//   },
+//   {
+//     title: 3,
+//     data: [{categName:"Toys",quantity:39},{categName:"Chairs",quantity:62}]
+//   },
+//   {
+//     title: 4,
+//     data: [{categName:"Bottles",quantity:21},{categName:"Tables",quantity:36}]
+//   }
+// ];
 import Modal from "react-native-modal";
 
 class demoScreen extends React.Component {
@@ -40,16 +77,17 @@ class demoScreen extends React.Component {
     return (
       <SafeAreaView style={{flex:1}} >
           <View style={styles.container}>
-        <Text>{route.params.datas}</Text>
+        {/* <Text>{route.params.datas}</Text> */}
         <SectionList
-        sections={DATA}
+        sections={newList}
         renderItem={({item})=>{
-        return(<Text style={styles.item}>{item}</Text>)
+        return(<SectionListItem name={item.name} categName={item.categName} quantity={item.quantity}/>)
         }}
-        renderSectionHeader={(a)=>{
-        ;
-        return(<Text style={styles.sectionHeader}>{a.section.title}</Text>)
-        }}
+        renderSectionHeader={
+            ({section})=>
+        <SectionListHeader titles={section.title}
+        />
+        }
         
         />
            </View> 
