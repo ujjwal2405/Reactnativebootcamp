@@ -186,7 +186,8 @@ class Flatmodal extends React.Component {
           <TouchableOpacity
             onPress={() =>
               navigation.navigate("demoScreen", {
-                datas: `${saveTitle} ${saveContent}`
+                routedata: `${saveTitle} 
+                 ${saveContent}`
               })
             }
           >

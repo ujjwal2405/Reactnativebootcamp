@@ -10,13 +10,14 @@ import Listing from './src/Components/Listing';
 import Flatmodal from './src/Components/Flatmodal';
 import demoScreen from './src/Components/demoScreen';
 import mapRender from './src/Components/mapRender';
+import Clip from './src/Components/Clip'
 import * as React from 'react';
 const Stack = createStackNavigator();
 
 const MyStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="demoScreen" component={demoScreen} />
+      
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Tatasky" component={Tatasky}
       options={{headerStyle: {
@@ -40,7 +41,8 @@ const MyStack = () => {
       <Stack.Screen name="Safearea" component={Safearea} />
       <Stack.Screen name="Listing" component={Listing} />
       <Stack.Screen name="Flatmodal" component={Flatmodal} />
-      
+      <Stack.Screen name="demoScreen" component={demoScreen} />
+      <Stack.Screen name="Clip" component={Clip}/>
       <Stack.Screen name="mapRender" component={mapRender}/>
       
     </Stack.Navigator>

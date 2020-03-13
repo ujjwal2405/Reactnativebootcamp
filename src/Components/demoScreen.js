@@ -10,7 +10,9 @@ import {
   TouchableOpacity,
   FlatList,
   SafeAreaView,
-  SectionList
+  SectionList,
+  Alert,
+  BackHandler
 } from "react-native";
 
 arrObj=[{categoryId:1,name:"Fruits",quantity:2},
@@ -44,38 +46,74 @@ datas.forEach((item) => {
    newList.push(dataList)
 })
 
-console.log(newList)
+ 
 
-
-
-// const DATA = [
-//   {
-//     title: 1,
-//     data: [{categName:"Fruits",quantity:2},{categName:"Fruits",quantity:3}]
-//   },
-//   {
-//     title: 2,
-//     data: [{categName:"Mobile",quantity:6},{categName:"Laptops",quantity:7}]
-//   },
-//   {
-//     title: 3,
-//     data: [{categName:"Toys",quantity:39},{categName:"Chairs",quantity:62}]
-//   },
-//   {
-//     title: 4,
-//     data: [{categName:"Bottles",quantity:21},{categName:"Tables",quantity:36}]
-//   }
-// ];
-import Modal from "react-native-modal";
+DisplayText=()=>{
+return(
+    "Hello"
+)
+}
 
 class demoScreen extends React.Component {
-  constructor(props) {
+    constructor(props) {
     super(props);
+    this.state = {
+        count:0,
+        text:" "
+    }
+
   }
+AlertToggle=()=>{
+Alert.alert(
+        'Alert Title',
+        'My Alert Msg',
+        [
+         {text: 'Navigate', onPress: () => this.props.navigation.navigate('Clip')},
+        ],
+        {cancelable: false},
+    );
+    }
+
+    componentDidMount() {
+    this.backHandler=BackHandler.addEventListener(
+  'hardwareBackPress',
+     ()=>{
+      this.setState({
+          count:this.state.count+1
+        })
+        if(this.state.count==1){
+            
+            this.setState({
+                text:"Back handler Triggered"
+            })
+setTimeout(()=>{
+    this.setState({
+        text:" "
+    })
+},3000)
+
+           
+        }
+        if(this.state.count==2){
+             this.AlertToggle()
+             this.setState({
+                 count:0
+             })
+            
+        }
+      return true;
+  }
+);
+}
   render() {
-    const { route } = this.props;
+
+   
+    
+    const { route ,navigation} = this.props;
     return (
       <SafeAreaView style={{flex:1}} >
+          <Text>{this.state.text}</Text>
+          {/* <Text style={{fontSize:20,padding:10}}>{route.params.routedata}</Text> */}
           <View style={styles.container}>
         {/* <Text>{route.params.datas}</Text> */}
         <SectionList
@@ -91,7 +129,13 @@ class demoScreen extends React.Component {
         
         />
            </View> 
-       
+       {/* <TouchableOpacity onPress={AlertToggle}>
+           <View>
+               <Text>
+                   Trigger Alert
+               </Text>
+           </View>
+       </TouchableOpacity> */}
       </SafeAreaView>
     );
   }

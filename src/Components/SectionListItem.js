@@ -1,29 +1,19 @@
 import React from "react";
 
-import {
-  View,
-  Text,
-  StyleSheet,
+import { View, Text, StyleSheet } from "react-native";
 
-} from "react-native";
+const SectionListItem = props => {
+  return (
+    <Text style={styles.content}>
+      {props.name} {props.categName} {props.quantity}
+    </Text>
+  );
+};
 
-
-
-    const SectionListItem=(props)=>{
-        
-        return(
-            <Text style={styles.content}>{props.name} {props.categName} {props.quantity}</Text>
-        )
-      
+const styles = StyleSheet.create({
+  content: {
+    fontSize: 30
   }
+});
 
-  const styles = StyleSheet.create({
-    content: {
-    
-    
-      fontSize:30,
-    
-    },
-  });
-
-export default SectionListItem
+export default SectionListItem;
