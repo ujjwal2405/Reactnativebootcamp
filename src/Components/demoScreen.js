@@ -12,7 +12,8 @@ import {
   SafeAreaView,
   SectionList,
   Alert,
-  BackHandler
+  BackHandler,
+  Clipboard
 } from "react-native";
 
 arrObj=[{categoryId:1,name:"Fruits",quantity:2},
@@ -59,7 +60,8 @@ class demoScreen extends React.Component {
     super(props);
     this.state = {
         count:0,
-        text:" "
+        text:" ",
+        ClipText:" "
     }
 
   }
@@ -68,7 +70,7 @@ Alert.alert(
         'Alert Title',
         'My Alert Msg',
         [
-         {text: 'Navigate', onPress: () => this.props.navigation.navigate('Clip')},
+         {text: 'Navigate', onPress: () => {Clipboard.setString(this.state.ClipText),this.props.navigation.navigate('Clip')}},
         ],
         {cancelable: false},
     );
@@ -116,6 +118,15 @@ setTimeout(()=>{
           {/* <Text style={{fontSize:20,padding:10}}>{route.params.routedata}</Text> */}
           <View style={styles.container}>
         {/* <Text>{route.params.datas}</Text> */}
+        
+        <TextInput
+        style={{height:40,
+        widht:"60%",
+    marginTop:15,
+marginBottom:10}}
+        onChangeText={ClipText=> this.setState({ClipText})}
+        ></TextInput>
+        
         <SectionList
         sections={newList}
         renderItem={({item})=>{
