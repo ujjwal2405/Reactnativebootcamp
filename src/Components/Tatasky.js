@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
         height:250,
         backgroundColor:'white',
         marginLeft:20,
-        // opacity:0.4,
+       
         alignItems:'center',
         borderColor:"white",
         borderWidth:2,
